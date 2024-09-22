@@ -24,7 +24,7 @@ function App() {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3000/upload', formData, {
+      const response = await axios.post('https://find-firewall-vulnerabilities.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -39,7 +39,7 @@ function App() {
   };
 
   return (
-    <div className="w-full  min-h-screen flex items-center justify-center bg-gray-300">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gray-300">
       <div className="bg-white p-6 my-10 rounded shadow-md w-full max-w-4xl mx-auto">
         <h1 className="text-2xl font-semibold text-gray-700 mb-4">Find Firewall Vulnerabilities</h1>
 
