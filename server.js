@@ -29,7 +29,7 @@ app.post('/upload', upload.single('rules'), async (req, res) => {
         const fileData = fs.readFileSync(filePath, 'utf8');
         console.log('File content:', fileData);  // Log file content
 
-        const finalQuestion = `${fileData} give me vulnerabilities according to this firewall info in 500 words`;
+        const finalQuestion = `${fileData} give me vulnerabilities according to this firewall info in 400 words`;
 
         // API Call to Generative Language API
         try {
