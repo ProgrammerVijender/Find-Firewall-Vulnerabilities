@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="w-full flex flex-col gap-[10px] min-h-screen items-center justify-center bg-gray-300">
       <div className='h-1/6 w-1/6'>
-        <img className="w-full h-full object-contain" src="./src/assets/logo.png" alt="LOGO" />
+        <img className="w-full h-full object-contain" src="./src/assets/LOGO.png" alt="LOGO" />
       </div>
       
       <div className="bg-white p-6 my-10 rounded shadow-md w-full max-w-4xl mx-auto">
