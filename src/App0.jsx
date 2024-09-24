@@ -5,7 +5,6 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [vulnerabilityReport, setVulnerabilityReport] = useState('');
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
 
   // Handle file selection
   const handleFileChange = (e) => {
@@ -31,22 +30,17 @@ function App() {
         },
       });
       setVulnerabilityReport(response.data.generatedContent);
-      setErrorMessage('');
+      setLoading(false);
     } catch (error) {
       console.error('Error uploading file:', error);
-      setVulnerabilityReport('');
-      setErrorMessage('Error occurred while fetching vulnerability data.');
-    } finally {
+      setVulnerabilityReport('Error occurred while fetching vulnerability data.');
       setLoading(false);
     }
   };
 
   return (
-    <div className="w-full flex flex-col gap-[10px] min-h-screen items-center justify-center bg-gray-300">
-      <div className='h-1/6 w-1/6'>
-        <img className="w-full h-full object-contain" src="./src/assets/logo.png" alt="LOGO" />
-      </div>
-      
+    <div className="w-full flex flex-col gap-[20px] min-h-screen  items-center justify-center bg-gray-300">
+      <div className='h-1/4 w-1/4   '><img className="w-full h-full object-contain" src="./src/assets/logo.png" alt="LOGO" /></div>
       <div className="bg-white p-6 my-10 rounded shadow-md w-full max-w-4xl mx-auto">
         <h1 className="text-2xl font-semibold text-gray-700 mb-4">Find Firewall Vulnerabilities</h1>
 
@@ -56,7 +50,6 @@ function App() {
             type="file"
             onChange={handleFileChange}
             className="border border-gray-300 p-2 w-full"
-            aria-label="Upload file"
           />
         </div>
 
@@ -70,12 +63,6 @@ function App() {
         </button>
 
         {/* Output Area */}
-        {errorMessage && (
-          <div className="mt-4 bg-red-50 p-4 rounded shadow">
-            <h2 className="text-lg font-semibold text-red-700">Error:</h2>
-            <p className="text-red-700">{errorMessage}</p>
-          </div>
-        )}
         {vulnerabilityReport && (
           <div className="mt-4 bg-gray-50 p-4 rounded shadow">
             <h2 className="text-lg font-semibold">Vulnerability Report:</h2>
