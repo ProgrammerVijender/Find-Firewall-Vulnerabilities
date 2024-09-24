@@ -53,6 +53,3 @@ LocalPort:                            Any
 RemotePort:                           Any
 Edge traversal:                       No
 Action:                               Allow
-
-
-give me vulnerabilities according to this firewall info 

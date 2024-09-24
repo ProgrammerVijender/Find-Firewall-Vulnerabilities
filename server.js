@@ -1,10 +1,10 @@
 import express from 'express';
-import multer from 'multer';  // To handle file uploads
+import multer from 'multer';  
 import fs from 'fs';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';  // Import `path` module
+import { dirname, join } from 'path'; 
 import cors from 'cors';
 
 dotenv.config();
@@ -29,7 +29,7 @@ app.post('/upload', upload.single('rules'), async (req, res) => {
         const fileData = fs.readFileSync(filePath, 'utf8');
         console.log('File content:', fileData);  // Log file content
 
-        const finalQuestion = `${fileData} in 400 words`;
+        const finalQuestion = `${fileData} give me vulnerabilities according to this firewall info in 400 words`;
 
         // API Call to Generative Language API
         try {
