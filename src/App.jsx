@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import logo from './src/assets/LOGO.png';
+import logo from './assets/LOGO.png';
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
